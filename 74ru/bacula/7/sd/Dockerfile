@@ -12,5 +12,5 @@ RUN DEBIAN_FRONTEND=noninteractive \
     rm -rf /var/lib/apt/lists/*  /tmp/*
 VOLUME ["/media", "/mnt", "/etc/bacula"]
 ENTRYPOINT ["su -u bacula /usr/sbin/bacula-sd -c /etc/bacula/bacula-sd.conf -f"]
-# docker run -d -p 9104:9103 -v /etc/bacula:/etc/bacula:ro --name bacula7-sd le9i0nx/docker-repro:bacula7-sd
+# docker run -d -p 9104:9103 -v /etc/bacula:/etc/bacula:ro -v /mnt:/mnt:rw -v /media:/media:rw --name bacula7-sd le9i0nx/docker-repro:bacula7-sd
 
