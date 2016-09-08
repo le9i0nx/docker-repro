@@ -7,10 +7,10 @@ RUN DEBIAN_FRONTEND=noninteractive \
     apt-get update  && \
     apt-get dist-upgrade -y && \
     apt-get install -y \
-        bacula-sd && \
+        sudo bacula-sd && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*  /tmp/*
 VOLUME ["/media", "/mnt", "/etc/bacula"]
-ENTRYPOINT ["su -u bacula /usr/sbin/bacula-sd -c /etc/bacula/bacula-sd.conf -f"]
+ENTRYPOINT ["sudo -u bacula /usr/sbin/bacula-sd -c /etc/bacula/bacula-sd.conf -f"]
 # docker run -d -p 9104:9103 -v /etc/bacula:/etc/bacula:ro -v /mnt:/mnt:rw -v /media:/media:rw --name bacula7-sd le9i0nx/docker-repro:bacula7-sd
 
