@@ -11,6 +11,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
     apt-get clean && \
     mkdir /var/run/bacula/ && \
     chmod 0777 /var/run/bacula && \
+    chmod 0777 /var/lib/bacula && \
     rm -rf /var/lib/apt/lists/*  /tmp/*
 VOLUME ["/media", "/mnt", "/etc/bacula"]
 CMD ["sudo","-u","bacula","/usr/sbin/bacula-sd","-c","/etc/bacula/bacula-sd.conf","-f"]
