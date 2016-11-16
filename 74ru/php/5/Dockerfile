@@ -14,4 +14,4 @@ RUN DEBIAN_FRONTEND=noninteractive \
 VOLUME ["/srv/www"]
 CMD /usr/sbin/php5-fpm -F -O
 # docker pull le9i0nx/docker-repro:php5-fpm
-# docker run -i -v /srv/www:/srv/www:ro -v /run/php5:/run/php:rw --name php5-fpm le9i0nx/docker-repro:php5-fpm
+# docker run -i -v /srv/www:/srv/www:ro -v /run/php5:/run:rw --name php5-fpm le9i0nx/docker-repro:php5-fpm
