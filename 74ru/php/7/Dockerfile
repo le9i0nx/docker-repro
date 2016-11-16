@@ -12,6 +12,6 @@ RUN DEBIAN_FRONTEND=noninteractive \
     mkdir /srv/www && \
     rm -rf /var/lib/apt/lists/*  /tmp/*
 VOLUME ["/srv/www","/run"]
-CMD ["/usr/sbin/php-fpm7.0", "-F", "-O"]
+CMD ["/usr/sbin/php-fpm7.0", "-F", "-O", "2>&1"]
 # docker pull le9i0nx/docker-repro:php7-fpm
-# docker run -d /srv/www:/srv/www:ro --name php7-fpm le9i0nx/docker-repro:php7-fpm
+# docker run -d -v /srv/www:/srv/www:ro --name php7-fpm le9i0nx/docker-repro:php7-fpm
