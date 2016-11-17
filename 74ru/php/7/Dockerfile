@@ -8,6 +8,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
     apt-get dist-upgrade -y && \
     apt-get install -y \
         sudo \
+        openssl \
         php-fpm \
         php-mysql \
         php \
