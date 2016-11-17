@@ -19,7 +19,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
         php-mail-mimedecode \
         php-mcrypt \
         php-net-smtp \
-        php-socket \
+        php-sockets \
         php-net-ldap3 \
         php-net-sieve && \
     apt-get clean && \
