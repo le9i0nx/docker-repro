@@ -21,8 +21,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
         php-net-smtp \
         php-socket \
         php-net-ldap3 \
-        php-net-sieve \
-     && \
+        php-net-sieve && \
     apt-get clean && \
     mkdir /srv/www && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
